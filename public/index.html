@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            if (screen.width <= 800) {
+                //window.location = "mobile/mobile.html";
+            }
+        </script>
+        <link rel="stylesheet" href="http://raritea.com/raritea/fonts.css"/>
+        <style>
+            html {
+                margin: 0;
+                }
+            body {
+                background-color: #53cd95;
+                overflow: hidden;
+                }
+            #title {
+                font-family: 'BebasNeue';
+                font-weight: 300;
+                font-size: 225px;
+                color: white;
+                text-align: center;
+                z-index: 1;
+                }
+            #instruct {
+                text-align: center;
+                color: white;
+                font-family: 'BebasNeue';
+                font-size: 60px;
+                max-width: 50%;
+                position: relative;
+                top: -150px;
+                }
+            #phone, textarea {
+                background-color: #53cd95;
+                height: 90px;
+                font-size: 100px;
+                border-style: dotted;
+                border-color: white;
+                position: relative;
+                top:-200px;
+                max-width: 60%;
+                color: white;
+                font-family: 'BebasNeue';
+                text-align: center;
+                }
+            textarea {
+                bottom: 10px;
+                }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Kim Kalldashian</h1>
+        <center>
+            <p id="instruct">Put in your friends number, and have us call to read Kim's tweets to them everyday!</p>
+            <form>
+                <input id="phone" type="tel"/>
+            </form>
+        </center>
+        <img src="Kim.png" style="position:fixed; left:0px; bottom:0px; z-index:2"/>
+    </body>
+</html>

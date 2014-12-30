@@ -1,0 +1,7 @@
+{
+  "name": "Kim Kalldashian",
+  "description": "Kalls From Kim",
+  "repository": "https://github.com/zeekw/kimkalldashian.git",
+  "logo": "public/kim.png",
+  "keywords": ["node", "express", "static"]
+}
