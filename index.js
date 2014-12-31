@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var twilio = require("../node_modules/twilio");
+var twilio = require("twilio");
 var bodyParser = require('body-parser');
 
 
@@ -24,12 +24,17 @@ var accountSid = 'ACc35629f131fe39cc5b112a761d7492c0';
 var authToken = "ae348584f7264cd2ff0d741c05b2bb32";
 var client = require('twilio')(accountSid, authToken);
  
-client.messages.create({
-    body: "Hello Isaac",
-    to: "+18563322539",
-    from: "+14243552041"
-}, function(err, message) {
-    process.stdout.write(message.sid);
+client.makeCall({
+
+    to: '+18563322539', // Any number Twilio can call
+    from: '+14243552041', // A number you bought from Twilio and can use for outbound communication
+    url: 'http://twimlbin.com/external/5bce17e9d8a6643e' // A URL that produces an XML document (TwiML) which contains instructions for the call
+
+}, function(err, responseData) {
+
+    //executed when the call has been initiated.
+    console.log(responseData.from); // outputs "+14506667788"
+
 });
 
 
