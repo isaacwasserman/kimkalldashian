@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
     console.log("Input is not correctly formatted");
   }
   
-  res.redirect('/subscribe');
+  res.redirect('/subscription');
   
 });
 

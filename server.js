@@ -1,12 +1,18 @@
 var express      = require('express');
-var app          = express();
+var path         = require('path');
 var bodyParser   = require('body-parser');
 var mongoose     = require('mongoose');
 var index        = require('./routes/index');
 var subscription = require('./routes/subscription');
 var call         = require('./routes/call');
 
+var app = express();
+
 mongoose.connect('mongodb://localhost/kimkalldashian');
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
