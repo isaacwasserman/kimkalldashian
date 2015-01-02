@@ -23,6 +23,18 @@ var client = new Twitter({
 });
 
 
+app.get('/call', function(req, res) {
+  twiml = new twilio.TwimlResponse();
+  client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
+    if(error) throw error;
+    var tweet = body[0].text;
+    console.log("Tweet: " + tweet);
+    twiml.say(tweet);
+    res.writeHead(200, {'Content-Type': 'text/xml'});
+    res.end(twiml.toString());
+  });
+});
+
 
 app.post('/submit', function(req, res) {
   console.log('Input Submitted');
@@ -46,17 +58,6 @@ app.post('/submit', function(req, res) {
     });
 }
   else {console.log("Input is not correctly formatted");}
-});
-
-app.get('/call', function(req, res) {
-  twiml = new twilio.TwimlResponse();
-  client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
-    if(error) throw error;
-    var tweet = body[0].text;
-    twiml.say(tweet);
-    res.writeHead(200, {'Content-Type': 'text/xml'});
-    res.end(twiml.toString());
-  });
 });
 
 app.get('/', function(request, response) {
