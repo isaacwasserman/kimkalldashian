@@ -30,17 +30,6 @@ var emojisToText = function(text) {
   });
 }
 
-var tweet = client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
-    if(error) throw error;
-    var tweet = body[0].text;
-//    console.log("Tweet = " + tweet);
-//    var translatedtweet = tweet.replace(/U+1F4AA/, "'Muscle Emoji'");
-    console.log(emojisToText(tweet));
-//    console.log("Translated Tweet = " + translatedtweet);
-});
-
-console.log
-
 app.post('/submit', function(req, res) {
   console.log('Input Submitted');
   console.log("Input Value: " + req.body.number);
@@ -69,7 +58,7 @@ app.post('/call', function(req, res) {
   twiml = new twilio.TwimlResponse();
   client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
     if(error) throw error;
-    var tweet = body[0].text;
+    var tweet = emojisToText(body[0].text);
     twiml.say(tweet);
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
