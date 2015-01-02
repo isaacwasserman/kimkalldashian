@@ -23,18 +23,6 @@ var client = new Twitter({
 });
 
 
-app.get('/call', function(req, res) {
-  twiml = new twilio.TwimlResponse();
-  client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
-    if(error) throw error;
-    var tweet = body[0].text;
-    console.log("Tweet: " + tweet);
-    twiml.say(tweet);
-    res.writeHead(200, {'Content-Type': 'text/xml'});
-    res.end(twiml.toString());
-  });
-});
-
 
 app.post('/submit', function(req, res) {
   console.log('Input Submitted');
@@ -54,10 +42,21 @@ app.post('/submit', function(req, res) {
         url: 'http://kimkalldashian.herokuapp.com/call' // A URL that produces an XML document (TwiML) which contains instructions for the call
     }, function(err, responseData) {
         //executed when the call has been initiated.
-        //console.log(responseData.from); // outputs "+14506667788"
+        console.log(responseData.from); // outputs "+14506667788"
     });
 }
   else {console.log("Input is not correctly formatted");}
+});
+
+app.get('/call', function(req, res) {
+  twiml = new twilio.TwimlResponse();
+  client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
+    if(error) throw error;
+    var tweet = body[0].text;
+    twiml.say(tweet);
+    res.writeHead(200, {'Content-Type': 'text/xml'});
+    res.end(twiml.toString());
+  });
 });
 
 app.get('/', function(request, response) {
