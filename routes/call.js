@@ -29,7 +29,7 @@ router.post('/', function(req, res) {
   twiml = new twilio.TwimlResponse();
   client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
     if(error) throw error;
-    var tweet = emojisToText(body[0].text);
+    var tweet = emojisToText(body[2].text);
     twiml.say("Hey, it's Kim again. " + tweet, { voice:'alice' });
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
