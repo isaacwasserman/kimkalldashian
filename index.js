@@ -3,6 +3,7 @@ var app = express();
 var twilio = require("twilio");
 var bodyParser = require('body-parser');
 var Twitter = require('twitter');
+var emoji = require('emoji');
 
 var accountSid = 'ACc35629f131fe39cc5b112a761d7492c0';
 var authToken = "ae348584f7264cd2ff0d741c05b2bb32";
@@ -22,12 +23,20 @@ var client = new Twitter({
   access_token_secret: 'WTuctWabzESIsa8eq50TS5u7kFBwBNyQvvjPsJvTuS6w1'
 });
 
+var emojisToText = function(text) {
+  return text.replace(emoji.EMOJI_RE(), function (_, m) {
+    var em = emoji.EMOJI_MAP[m];
+    return em[1] + " ";
+  });
+}
+
 var tweet = client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
     if(error) throw error;
     var tweet = body[0].text;
-    console.log("Tweet = " + tweet);
-    var translatedtweet = tweet.replace(/U+1F4AA/, "'Muscle Emoji'");
-    console.log("Translated Tweet = " + translatedtweet);
+//    console.log("Tweet = " + tweet);
+//    var translatedtweet = tweet.replace(/U+1F4AA/, "'Muscle Emoji'");
+    console.log(emojisToText(tweet));
+//    console.log("Translated Tweet = " + translatedtweet);
 });
 
 console.log
