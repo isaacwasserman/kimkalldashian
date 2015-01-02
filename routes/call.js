@@ -43,7 +43,7 @@ router.get('/', function(req, res) {
       placeCall(subscribers[x].number);
       console.log('Called: ' + subscribers[x].number);
     }
-    res.send({success: true});
+    res.send("views/index.jade");
   });
 });
 
