@@ -22,7 +22,15 @@ var client = new Twitter({
   access_token_secret: 'WTuctWabzESIsa8eq50TS5u7kFBwBNyQvvjPsJvTuS6w1'
 });
 
+var tweet = client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
+    if(error) throw error;
+    var tweet = body[0].text;
+    console.log("Tweet = " + tweet);
+    var translatedtweet = tweet.replace(/U+1F4AA/, "'Muscle Emoji'");
+    console.log("Translated Tweet = " + translatedtweet);
+});
 
+console.log
 
 app.post('/submit', function(req, res) {
   console.log('Input Submitted');
