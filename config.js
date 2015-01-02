@@ -1,3 +1,14 @@
+env = process.env.NODE_ENV;
+
+switch(env){
+  case "development":
+    var mongo = 'mongodb://localhost/kimkalldashian'
+    break;
+  case "production":
+    var mongo = process.env.MONGOLAB_URI
+    break;
+}
+
 module.exports = {
   
   twitter: {
@@ -10,6 +21,10 @@ module.exports = {
   twilio: {
     accountSid: 'ACc35629f131fe39cc5b112a761d7492c0',
     authToken: 'ae348584f7264cd2ff0d741c05b2bb32'
+  },
+  
+  mongo: {
+    uri: mongo
   }
   
 }

@@ -2,13 +2,16 @@ var express      = require('express');
 var path         = require('path');
 var bodyParser   = require('body-parser');
 var mongoose     = require('mongoose');
+var config       = require('./config');
 var index        = require('./routes/index');
 var subscription = require('./routes/subscription');
 var call         = require('./routes/call');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/kimkalldashian');
+console.log(config);
+
+mongoose.connect(config.mongo.uri);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
