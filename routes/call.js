@@ -30,8 +30,7 @@ router.post('/', function(req, res) {
   client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
     if(error) throw error;
     var tweet = emojisToText(body[0].text);
-    console.log(tweet);
-    twiml.say(tweet);
+    twiml.say("Hey, it's Kim again. " + tweet);
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
   });
