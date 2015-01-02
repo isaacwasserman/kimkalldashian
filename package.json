@@ -16,7 +16,8 @@
     "twitter": "1.0.1",
     "emoji": "0.3.2",
     "mongoose": "3.8.x",
-    "jade": "1.8.x"
+    "jade": "1.8.x",
+    "serve-favicon": "2.2.x"
   },
   "engines": {
     "node": "0.10.x"

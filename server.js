@@ -6,6 +6,7 @@ var config       = require('./config');
 var index        = require('./routes/index');
 var subscription = require('./routes/subscription');
 var call         = require('./routes/call');
+var favicon      = require('serve-favicon');
 
 var app = express();
 
