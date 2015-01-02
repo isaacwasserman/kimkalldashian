@@ -18,7 +18,6 @@ router.post('/', function(req, res) {
   
   if(input.match(/^[0-9]+$/) != null && input.length >= 10){
     var subscriber = new Subscription({number: req.body.number, twitter: 'kimkardashian'});
-
     subscriber.save(function (err, subscriber, numberAffected) {
       if (err) { 
         console.log(err); 

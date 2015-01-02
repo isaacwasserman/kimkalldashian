@@ -9,8 +9,6 @@ var call         = require('./routes/call');
 
 var app = express();
 
-console.log(config);
-
 mongoose.connect(config.mongo.uri);
 
 // view engine setup
