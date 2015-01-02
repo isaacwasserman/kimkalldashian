@@ -1,7 +1,7 @@
 mongoose = require('mongoose');
 
 var subscriptionSchema = mongoose.Schema({
-    number: Number,
+    number: {type: Number, unique: true},
     twitter: String
 })
 
