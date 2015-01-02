@@ -56,7 +56,7 @@ app.post('/submit', function(req, res) {
   else {console.log("Input is not correctly formatted");}
 });
 
-app.get('/call', function(req, res) {
+app.post('/call', function(req, res) {
   twiml = new twilio.TwimlResponse();
   client.get('statuses/user_timeline', {screen_name: 'kimkardashian' }, function(error, body, response){
     if(error) throw error;
