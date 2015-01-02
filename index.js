@@ -39,10 +39,10 @@ app.post('/submit', function(req, res) {
     client.makeCall({
         to: tonumber, // Any number Twilio can call
         from: '+14243552041', // A number you bought from Twilio and can use for outbound communication
-        url: 'http://twimlbin.com/external/5bce17e9d8a6643e' // A URL that produces an XML document (TwiML) which contains instructions for the call
+        url: 'http://kimkalldashian.herokuapp.com/call' // A URL that produces an XML document (TwiML) which contains instructions for the call
     }, function(err, responseData) {
         //executed when the call has been initiated.
-        console.log(responseData.from); // outputs "+14506667788"
+        //console.log(responseData.from); // outputs "+14506667788"
     });
 }
   else {console.log("Input is not correctly formatted");}
