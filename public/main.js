@@ -1,6 +1,8 @@
-var init = funtion(){
-  var one = screen.width / 2;
-  var two = one - 160;
-  var three = two + "px";
-  document.getElementById("phonesubmit").style.marginLeft = three;
+var checkphone = function(){
+  if(document.getElementById("phone").value.match(/^[0-9]+$/) != null && document.getElementById("phone").value.length == 10){
+    document.getElementById("phone").style.backgroundColor = "#53cd95";
+  }
+  else{
+    document.getElementById("phone").style.backgroundColor = "#ff6060";
+  }
 }

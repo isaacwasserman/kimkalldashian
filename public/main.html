@@ -1,14 +1,14 @@
 <html>
     <head>
+        <title>Kalls From Kim</title>
         <link rel="stylesheet" href="http://raritea.com/raritea/fonts.css"/>
-        <script src="main.js"></script>
         <style>
             html {
                 margin: 0;
                 }
             body {
                 background-color: #53cd95;
-                overflow: hidden;
+/*                overflow: hidden;*/
                 }
             #title {
                 font-family: 'BebasNeue';
@@ -35,13 +35,12 @@
                 border-color: white;
                 position: relative;
                 top:-200px;
-                max-width: 60%;
+                width: 60%;
                 color: white;
                 font-family: 'BebasNeue';
                 text-align: center;
                 }
             textarea {
-                bottom: 10px;
                 }
             #phonesubmit {
                 position: relative;
@@ -62,14 +61,25 @@
             #submitcontainer {
               margin: 0 auto;
             }
+            *:focus {
+              outline: 0px;
+            }
+            #help {
+              width: 50px;
+              float: left;
+            }
         </style>
+        <script src="main.js"></script>
     </head>
     <body>
         <h1 id="title">Kim Kalldashian</h1>
         <center>
             <p id="instruct">Put in your friends number, and have us call to read Kim's tweets to them everyday!</p>
-            <form>
-              <input id="phone" type="tel"/>
+            <form method="post" action="/submit" type="application/x-www-form-urlencoded">
+              <div>
+                <input id="phone" type="tel" onkeyup="checkphone();" name="number"/>
+<!--                <img id="help" src="help.png"/>-->
+              </div>
               <div id="submitcontainer"><input id="phonesubmit" type="submit" action="/submit" method="post" type="application/x-www-form-urlencoded"/></div>
             </form>
         </center>
