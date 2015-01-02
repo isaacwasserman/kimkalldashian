@@ -1,0 +1,68 @@
+html {
+  margin: 0;
+}
+body {
+  background-color: #53cd95;
+}
+#title {
+  font-family: 'BebasNeue';
+  font-weight: 300;
+  font-size: 225px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+#instruct {
+  text-align: center;
+  color: white;
+  font-family: 'BebasNeue';
+  font-size: 60px;
+  max-width: 50%;
+  position: relative;
+  top: -150px;
+}
+#phone, textarea {
+  background-color: #53cd95;
+  height: 90px;
+  font-size: 100px;
+  border-style: dotted;
+  border-color: white;
+  position: relative;
+  top:-200px;
+  width: 60%;
+  color: white;
+  font-family: 'BebasNeue';
+  text-align: center;
+}
+#phonesubmit {
+  position: relative;
+  top: -150px;
+  height: 130px;
+  width: 320px;
+  border-radius: 10px;
+  border-style: dotted;
+  border-color: white;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 130px;
+  font-weight: 100;
+  cursor: pointer;
+}
+#submitcontainer {
+  margin: 0 auto;
+}
+*:focus {
+  outline: 0px;
+}
+#help {
+  width: 50px;
+  float: left;
+}
+#kim {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  z-index:2;
+}

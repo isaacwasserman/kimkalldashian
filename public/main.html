@@ -1,88 +1,23 @@
 <html>
-    <head>
-        <title>Kalls From Kim</title>
-        <link rel="stylesheet" href="http://raritea.com/raritea/fonts.css"/>
-        <style>
-            html {
-                margin: 0;
-                }
-            body {
-                background-color: #53cd95;
-/*                overflow: hidden;*/
-                }
-            #title {
-                font-family: 'BebasNeue';
-                font-weight: 300;
-                font-size: 225px;
-                color: white;
-                text-align: center;
-                z-index: 1;
-                }
-            #instruct {
-                text-align: center;
-                color: white;
-                font-family: 'BebasNeue';
-                font-size: 60px;
-                max-width: 50%;
-                position: relative;
-                top: -150px;
-                }
-            #phone, textarea {
-                background-color: #53cd95;
-                height: 90px;
-                font-size: 100px;
-                border-style: dotted;
-                border-color: white;
-                position: relative;
-                top:-200px;
-                width: 60%;
-                color: white;
-                font-family: 'BebasNeue';
-                text-align: center;
-                }
-            textarea {
-                }
-            #phonesubmit {
-                position: relative;
-                top: -150px;
-                height: 130px;
-                width: 320px;
-                border-radius: 10px;
-                border-style: dotted;
-                border-color: white;
-                background-color: transparent;
-                text-align: center;
-                color: white;
-                font-family: BebasNeue;
-                font-size: 130px;
-                font-weight: 100;
-                cursor: pointer;
-            }
-            #submitcontainer {
-              margin: 0 auto;
-            }
-            *:focus {
-              outline: 0px;
-            }
-            #help {
-              width: 50px;
-              float: left;
-            }
-        </style>
-        <script src="main.js"></script>
-    </head>
-    <body>
-        <h1 id="title">Kim Kalldashian</h1>
-        <center>
-            <p id="instruct">Put in your friends number, and have us call to read Kim's tweets to them everyday!</p>
-            <form method="post" action="/submit" type="application/x-www-form-urlencoded">
-              <div>
-                <input id="phone" type="tel" onkeyup="checkphone();" name="number"/>
-<!--                <img id="help" src="help.png"/>-->
-              </div>
-              <div id="submitcontainer"><input id="phonesubmit" type="submit" action="/submit" method="post" type="application/x-www-form-urlencoded"/></div>
-            </form>
-        </center>
-        <img src="Kim.png" style="position:fixed; left:0px; bottom:0px; z-index:2"/>
-    </body>
+  <head>
+    <title>Kalls From Kim</title>
+    <link rel="stylesheet" href="http://raritea.com/raritea/fonts.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Kim Kalldashian</h1>
+    <center>
+      <p id="instruct">Put in your friends number, and have us call to read Kim's tweets to them everyday!</p>
+      <form method="post" action="/submit" type="application/x-www-form-urlencoded">
+        <div>
+          <input id="phone" type="tel" onkeyup="checkphone();" name="number"/>
+        </div>
+        <div id="submitcontainer">
+          <input id="phonesubmit" type="submit" action="/subscription" method="post" type="application/x-www-form-urlencoded"/>
+        </div>
+      </form>
+    </center>
+    <img id="kim" src="images/kim.png"/>
+  </body>
 </html>
