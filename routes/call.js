@@ -12,7 +12,7 @@ var client  = new Twitter(config.twitter);
 var emojisToText = function(text) {
   return text.replace(emoji.EMOJI_RE(), function (_, m) {
     var em = emoji.EMOJI_MAP[m];
-    return em[1].toUpperCase + " ";
+    return em[1].toUpperCase() + " ";
   });
 }
 
@@ -44,6 +44,7 @@ router.get('/', function(req, res) {
       placeCall(subscribers[x].number);
       console.log('Called: ' + subscribers[x].number);
     }
+    res.send({success: true});
   });
 });
 
