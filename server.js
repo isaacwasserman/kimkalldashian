@@ -19,7 +19,7 @@ app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
-app.use(express.favicon(__dirname + '/public/images/kim.ico'));
+//app.use(express.favicon(__dirname + '/public/images/kim.ico'));
 
 app.use('/subscription', subscription);
 app.use('/call', call);
