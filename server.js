@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 //app.use(express.favicon(__dirname + '/public/images/kim.ico'));
 
-app.use('/subscription', subscription);
+app.use('/subscribers', subscription);
 app.use('/call', call);
 app.use('/', index);
 

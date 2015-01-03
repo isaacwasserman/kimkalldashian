@@ -68,3 +68,8 @@ body {
   bottom:0px;
   z-index:2;
 }
+#listofnumbers {
+  font-size: 50px;
+  color: white;
+  font-family: BebasNeue;
+}
