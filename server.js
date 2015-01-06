@@ -6,7 +6,7 @@ var config       = require('./config');
 var index        = require('./routes/index');
 var subscription = require('./routes/subscription');
 var call         = require('./routes/call');
-var signup       = require('./routes/signup');
+var favicon      = require('serve-favicon');
 
 var app = express();
 
@@ -19,8 +19,8 @@ app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
+//app.use(express.favicon(__dirname + '/public/images/kim.ico'));
 
-app.use('/signup', signup);
 app.use('/subscribers', subscription);
 app.use('/call', call);
 app.use('/', index);
