@@ -6,7 +6,7 @@ block content
 
     p#instruct Put in your friends number, and have us call to read Kim's tweets to them everyday!
 
-    form(method="post", action="/subscription", type="application/x-www-form-urlencoded")
+    form(method="post", action="/subscribers", type="application/x-www-form-urlencoded")
       div
         input#phone(type="tel", onkeyup="checkphone();", name="number")
       div#submitcontainer
