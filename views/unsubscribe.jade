@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1#title Unsubscribe?
+  center
+
+    p#instruct If we're really that annoying to you, be a loser and unsubscribe by putting in your number.
+
+    form(method="post", action="/unsubscribe", type="application/x-www-form-urlencoded")
+      div
+        input#phone(type="tel", onkeyup="checkphone();", name="number")
+      div#submitcontainer
+        input#phonesubmit(type="submit")
+
+    img#kim(src="images/kim.png")
+    
