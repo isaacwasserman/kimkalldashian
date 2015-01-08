@@ -36,6 +36,11 @@ router.post('/', function(req, res) {
   });
 });
 
+router.get('/:number', function(req, res) {
+  placeCall(req.params.number);
+  res.render('index', {message: "Kim's calling..."});
+});
+
 router.get('/', function(req, res) {
   Subscription.find({}, function(err, subscribers) {
     if (err) { console.log(err); };
