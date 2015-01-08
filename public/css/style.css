@@ -1,5 +1,5 @@
 html {
-  margin: 0;
+  margin: 0px;
 }
 body {
   background-color: #53cd95;
@@ -78,4 +78,29 @@ body {
 li {
   display: inline-block;
   padding-right: 20px;
+}
+
+#flash {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  padding: 15px;
+  text-align: center;
+}
+
+#flash p {
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  left: 0px;
+  width: 100%;
+  padding-left: 0px;
+}
+
+#unsubscribelink {
+  color: white;
+  font-family: sans-serif;
+  position: relative;
+  top: -220px;
 }

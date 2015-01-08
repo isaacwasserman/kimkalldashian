@@ -31,7 +31,6 @@ router.post('/', function(req, res) {
     if(error) throw error;
     var tweet = emojisToText(body[0].text);
     twiml.say("Hey, it's Kim again. " + tweet, { voice:'alice' });
-    twiml.record();
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
   });

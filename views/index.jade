@@ -5,7 +5,7 @@ block content
   center
 
     p#instruct Put in your friends number, and have us call to read Kim's tweets to them everyday!
-
+    a#unsubscribelink(href="/unsubscribe") Looking to unsubscribe?
     form(method="post", action="/subscribers", type="application/x-www-form-urlencoded")
       div
         input#phone(type="tel", onkeyup="checkphone();", name="number")

@@ -2,6 +2,7 @@ var express      = require('express');
 var router       = express.Router();
 var twilio       = require('twilio');
 var Subscription = require('../models/subscription');
+var helper       = require('../lib/helper');
 
 router.get('/', function(req, res) {
   Subscription.find({}, 'number', function(err, subscriptions) {
@@ -14,24 +15,25 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+  var phone = req.body.number;
+
+  console.log("Submitted: " + phone + " for subscription");
   
-  console.log('Input Submitted');
-  console.log("Input Value: " + req.body.number);
-  
-  var input = req.body.number;
-  
-  if(input.match(/^[0-9]+$/) != null && input.length >= 10){
-    var subscriber = new Subscription({number: req.body.number, twitter: 'kimkardashian'});
+  if(helper.validatePhoneNumber(phone)) {
+    var subscriber = new Subscription({number: phone, twitter: 'kimkardashian'});
     subscriber.save(function (err, subscriber, numberAffected) {
-      if (err) { 
-        console.log(err); 
+      if (err) {
+        console.log(err);
+        res.render('index', {message: 'Uh oh. Something went wrong. Try subscribing again.'});
+      } else {
+        //res.render('index', {message: 'Thank you for subscribing!'});
       }
     });
   } else {
-    console.log("Input is not correctly formatted");
+    res.render('index', {message: "That wasn't a valid phone number. Try again."});
   }
   
-  res.redirect('/');
+  
   
 });
 
