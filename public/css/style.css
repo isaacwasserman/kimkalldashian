@@ -79,3 +79,17 @@ li {
   display: inline-block;
   padding-right: 20px;
 }
+
+#flash {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  padding: 15px;
+  text-align: center;
+}
+
+#flash p {
+  color: white;
+  font-size: 16px;
+}
