@@ -92,6 +92,7 @@ li {
 #flash p {
   color: white;
   font-size: 16px;
+<<<<<<< HEAD
   font-family: sans-serif;
   left: 0px;
   width: 100%;
@@ -109,4 +110,6 @@ li {
 #indexform {
   position: relative;
   top: -20px;
+=======
+>>>>>>> fe5feb5640599da2099eea6200ea0771240404ad
 }

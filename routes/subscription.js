@@ -26,7 +26,11 @@ router.post('/', function(req, res) {
         console.log(err);
         res.render('index', {message: 'Uh oh. Something went wrong. Try subscribing again.'});
       } else {
+<<<<<<< HEAD
         //res.render('index', {message: 'Thank you for subscribing!'});
+=======
+        res.render('index', {message: 'Thank you for subscribing!'});
+>>>>>>> fe5feb5640599da2099eea6200ea0771240404ad
       }
     });
   } else {
