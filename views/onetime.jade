@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1#title One Kall
+  center
+
+    p#instruct Put in your friends number, and have us call to read Kim's latest tweet!
+    
+    form(method="post", action="/onetimecall", type="application/x-www-form-urlencoded")
+      div
+        input#phone(type="tel", onkeyup="checkphone();", name="onetimecaller")
+      div#submitcontainer
+        input#phonesubmit(type="submit")
+
+    img#kim(src="images/kim.png")
+    

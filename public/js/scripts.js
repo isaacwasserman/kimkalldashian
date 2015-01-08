@@ -6,3 +6,11 @@ var checkphone = function(){
     document.getElementById("phone").style.backgroundColor = "#ff6060";
   }
 }
+
+var unsubscribelink = function(){
+  location.assign(location + "unsubscribe")
+}
+
+var onetimelink = function(){
+  location.assign(location + "onetime")
+}
