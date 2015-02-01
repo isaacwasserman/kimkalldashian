@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
   var phone = req.body.number;
 
   console.log("Submitted: " + phone + " for subscription");
-  
+  console.log(helper.validatePhoneNumber(phone));
   if(helper.validatePhoneNumber(phone)) {
     var subscriber = new Subscription({number: phone, twitter: 'kimkardashian'});
     subscriber.save(function (err, subscriber, numberAffected) {
@@ -26,7 +26,6 @@ router.post('/', function(req, res) {
         console.log(err);
         res.render('index', {message: 'Uh oh. Something went wrong. Try subscribing again.'});
       } else {
-        //res.render('index', {message: 'Thank you for subscribing!'});
         res.render('index', {message: 'Thank you for subscribing!'});
       }
     });

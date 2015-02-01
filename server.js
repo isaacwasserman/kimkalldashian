@@ -7,7 +7,6 @@ var index        = require('./routes/index');
 var subscription = require('./routes/subscription');
 var call         = require('./routes/call');
 var unsubscribe  = require('./routes/unsubscribe');
-var onetime      = require('./routes/onetime');
 var favicon      = require('serve-favicon');
 
 var app = express();
@@ -27,7 +26,6 @@ app.use('/subscribers', subscription);
 app.use('/call', call);
 app.use('/', index);
 app.use('/unsubscribe', unsubscribe);
-app.use('/onetime', onetime);
 
 app.set('port', (process.env.PORT || 5000));
 
