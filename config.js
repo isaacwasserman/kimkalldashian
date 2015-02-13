@@ -9,6 +9,8 @@ switch(env){
     break;
 }
 
+//console.log("Config set");
+
 module.exports = {
   
   twitter: {
