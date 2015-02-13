@@ -31,7 +31,7 @@ router.post('/', function(req, res) {
     if(error) throw error;
     var tweet = emojisToText(body[0].text);
     var linkbeglocay = tweet.search("http");
-    var tweet = tweet.substring(0, tweet.substring(linkbeglocay));
+    var tweet = tweet.substring(0, linkbeglocay);
     twiml.say("Hey, it's Kim again. " + tweet, { voice:'woman' });
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
